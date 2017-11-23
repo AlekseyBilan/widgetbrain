@@ -11,26 +11,30 @@ export default {
         graphOpenLastTorque: {
                 type: Array,
                 default: [1,23,47]
+            },
+        graphOpenLabels: {
+                type: Array,
+                default: [1,23,47]
             }
     },
     mounted () {
     // Overwriting base render method with actual data.
     this.renderChart({
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+        labels: this.graphOpenLabels,
         datasets: [
             {
                 label: 'Average open torque',
-                backgroundColor: '#3c8dbc',
-                data: graphOpenAverageTorque
+                backgroundColor: '#ccc',
+                data: this.graphOpenAverageTorque
             },
             {
                 label: 'Last open torque',
-                backgroundColor: '#3c8dbc',
-                data: graphOpenLastTorque
+                backgroundColor: '#777',
+                data: this.graphOpenLastTorque
             },
             {
                 label: 'Forecast open torque',
-                backgroundColor: '#3c8dbc',
+                backgroundColor: '#c3c3c3',
                 data: [1,2,3,54,5]
             }
         ]
